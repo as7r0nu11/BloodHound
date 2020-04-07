@@ -510,6 +510,6 @@ function Invoke-BloodHound{
 	$Assembly.GetType("Costura.AssemblyLoader", $false).GetMethod("Attach", $BindingFlags).Invoke($Null, @())
 	$Assembly.GetType("SharpHound3.SharpHound").GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
 }
-Write-Output("SPNTargets")
-Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod SPNTargets  
+Write-Output("DCOM")
+Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod DCOM  
 #-Throttle 6000 -Jitter 50
