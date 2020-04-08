@@ -511,6 +511,6 @@ function Invoke-BloodHound{
 	$Assembly.GetType("SharpHound3.SharpHound").GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
 }
 Write-Output("DCOM")
-Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod Container
+Invoke-BloodHound -Domain prod.mobily.lan -CollectionMethod Container -Throttle 6000 -Jitter 50
 
 #-Throttle 6000 -Jitter 50
